@@ -1,0 +1,118 @@
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    
+                    <h2>Sign Up</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="sForm">
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+                            </div>
+                            <div *ngIf="sForm.controls['firstName'].invalid && (sForm.controls['firstName'].touched || sForm.controls['firstName'].dirty)">
+                                <div *ngIf="sForm.controls['firstName'].errors.required" class="red">
+                                  First name is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['firstName'].errors.minlength" class="red">
+                                  First name must have at least 3 chars
+                    
+                                </div>
+                    
+                              </div>
+                             <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                            </div>
+                            <div *ngIf="sForm.controls['lastName'].invalid && (sForm.controls['lastName'].touched || sForm.controls['lastName'].dirty)">
+                                <div *ngIf="sForm.controls['lastName'].errors.required" class="red">
+                                  Last name is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['lastName'].errors.minlength" class="red">
+                                  Last name must have at least 5 chars
+                    
+                                </div>
+                    
+                              </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                            </div>
+                            <div *ngIf="sForm.controls['email'].invalid && (sForm.controls['email'].touched || sForm.controls['email'].dirty)">
+                                <div *ngIf="sForm.controls['email'].errors.required" class="red">
+                                  Email is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['email'].errors.email" class="red">
+                                  Type Email
+                    
+                                </div>
+                    
+                              </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="phone" placeholder="Phone">
+                            </div>
+                            <div *ngIf="sForm.controls['phone'].invalid && (sForm.controls['phone'].touched || sForm.controls['phone'].dirty)">
+                                <div *ngIf="sForm.controls['phone'].errors.required" class="red">
+                                 Phone is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['phone'].errors.minlength" class="red">
+                                  Phone must have at least 8 chars
+                    
+                                </div>
+                    
+                              </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                            </div> 
+                            <div *ngIf="sForm.controls['password'].invalid && (sForm.controls['password'].touched || sForm.controls['password'].dirty)">
+                                <div *ngIf="sForm.controls['password'].errors.required" class="red">
+                                  Password is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['password'].errors.minlength" class="red">
+                                  Password must have at least 10 chars
+                    
+                                </div>
+                    
+                              </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password">
+                            </div>
+                        
+                            <div *ngIf="sForm.controls['confirmPassword'].invalid && (sForm.controls['confirmPassword'].touched || sForm.controls['confirmPassword'].dirty)">
+                                <div *ngIf="sForm.controls['confirmPassword'].errors.required" class="red">
+                                    Confirm Password is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['confirmPassword'].errors.minlength" class="red">
+                                    Confirm Password must have at least 10 chars
+                    
+                                </div>
+                    
+                              </div>
+                           
+            
+                           
+                        </div>
+                    
+                        <div class="form-group">
+                        <div class="regerv_btn">
+                            <button type="submit" (click)="signup()" class="btn_4">Sign Up</button>
+                            <!-- <a href="#" class="btn_4">Sign Up</a> -->
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

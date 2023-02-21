@@ -1,0 +1,93 @@
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    
+                    <h2>Add Chef</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="sForm">
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+                            </div>
+                            <div *ngIf="sForm.controls['firstName'].invalid && (sForm.controls['firstName'].touched || sForm.controls['firstName'].dirty)">
+                                <div *ngIf="sForm.controls['firstName'].errors.required" class="red">
+                                  First name is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['firstName'].errors.minlength" class="red">
+                                  First name must have at least 3 chars
+                    
+                                </div>
+                    
+                              </div>
+                             <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                            </div>
+                            <div *ngIf="sForm.controls['lastName'].invalid && (sForm.controls['lastName'].touched || sForm.controls['lastName'].dirty)">
+                                <div *ngIf="sForm.controls['lastName'].errors.required" class="red">
+                                  Last name is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['lastName'].errors.minlength" class="red">
+                                  Last name must have at least 5 chars
+                    
+                                </div>
+                    
+                              </div>
+                            
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="poste" placeholder="Poste">
+                            </div>
+                            <div *ngIf="sForm.controls['poste'].invalid && (sForm.controls['poste'].touched || sForm.controls['poste'].dirty)">
+                                <div *ngIf="sForm.controls['poste'].errors.required" class="red">
+                                    Poste is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['poste'].errors.minlength" class="red">
+                                  Poste must have at least 7 chars
+                    
+                                </div>
+                    
+                              </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="image" placeholder="Image">
+                            </div> 
+                            <!-- <button type="submit" (click)="Upload()" class="btn_4">Upload</button> -->
+
+                            <div *ngIf="sForm.controls['image'].invalid && (sForm.controls['image'].touched || sForm.controls['image'].dirty)">
+                                <div *ngIf="sForm.controls['image'].errors.required" class="red">
+                                    Image is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['image'].errors.minlength" class="red">
+                                  Type Image
+                    
+                                </div>
+                    
+                              </div>
+                        
+                           
+            
+                           
+                        </div>
+                    
+                        <div class="form-group">
+                        <div class="regerv_btn">
+                            <button type="submit" (click)="Add()" class="btn_4">Add chef</button>
+                            <!-- <a href="#" class="btn_4">Sign Up</a> -->
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

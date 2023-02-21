@@ -1,0 +1,93 @@
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    
+                    <h2>Add Plat</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="sForm">
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="name" placeholder="Name">
+                            </div>
+                            <div *ngIf="sForm.controls['name'].invalid && (sForm.controls['name'].touched || sForm.controls['name'].dirty)">
+                                <div *ngIf="sForm.controls['name'].errors.required" class="red">
+                                  Name is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['name'].errors.minlength" class="red">
+                                  Name must have at least 3 chars
+                    
+                                </div>
+                    
+                              </div>
+                             <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="contenu" placeholder="Contenu">
+                            </div>
+                            <div *ngIf="sForm.controls['contenu'].invalid && (sForm.controls['contenu'].touched || sForm.controls['contenu'].dirty)">
+                                <div *ngIf="sForm.controls['contenu'].errors.required" class="red">
+                                    Conetnu is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['contenu'].errors.minlength" class="red">
+                                    Contenu must have at least 5 chars
+                    
+                                </div>
+                    
+                              </div>
+                            
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="prix" placeholder="Prix">
+                            </div>
+                            <div *ngIf="sForm.controls['prix'].invalid && (sForm.controls['prix'].touched || sForm.controls['prix'].dirty)">
+                                <div *ngIf="sForm.controls['prix'].errors.required" class="red">
+                                    Prix is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['prix'].errors.minlength" class="red">
+                                    Type Num
+                    
+                                </div>
+                    
+                              </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" formControlName="image" placeholder="Image">
+                            </div> 
+                            <!-- <button type="submit" (click)="Upload()" class="btn_4">Upload</button> -->
+
+                            <div *ngIf="sForm.controls['image'].invalid && (sForm.controls['image'].touched || sForm.controls['image'].dirty)">
+                                <div *ngIf="sForm.controls['image'].errors.required" class="red">
+                                    Image is required
+                                </div>
+                                
+                                <div *ngIf="sForm.controls['image'].errors.minlength" class="red">
+                                  Type Image
+                    
+                                </div>
+                    
+                              </div>
+                        
+                           
+            
+                           
+                        </div>
+                    
+                        <div class="form-group">
+                        <div class="regerv_btn">
+                            <button type="submit" (click)="Add()" class="btn_4">Add Plat</button>
+                            <!-- <a href="#" class="btn_4">Sign Up</a> -->
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

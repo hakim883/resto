@@ -1,0 +1,56 @@
+
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    
+                    <h2>LogIn</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+
+
+<form #teamForm="ngForm" (ngSubmit)="teamForm.form.valid && onSubmit(teamForm)">
+    <div class="form-group">
+    <label class="white">Name</label>
+    <input type="text" class="form-control" [ngModelOptions]="{standalone:
+    true}" [(ngModel)]="team.name" #name="ngModel"
+    [ngClass]="{ 'is-invalid': teamForm.submitted && name.invalid }"
+    required>
+    <div *ngIf="teamForm.submitted && name.invalid" class="invalid-
+    feedback" >
+    <p *ngIf="name.errors.required" class="red">Name is required</p>
+    </div> </div>
+    <div class="form-group"> <label class="white">Email</label>
+    <input type="email" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="team.email" #email="ngModel"
+    [ngClass]="{ 'is-invalid': teamForm.submitted && email.invalid }" email required>
+    <div *ngIf="teamForm.submitted && email.invalid" class="invalid- feedback">
+    <div *ngIf="email.errors.required" class="red">Email is required</div>
+    <div *ngIf="email.errors.email" class="red">Email format is invalid </div> </div>
+    </div>
+    <div class="form-group">
+    <label class="white">Foundation</label>
+    <input type="text" class="form-control" [ngModelOptions]="{standalone:
+    true}" [(ngModel)]="team.foundation" #foundation="ngModel"
+    [ngClass]="{ 'is-invalid': teamForm.submitted && foundation.invalid }"
+    minlength="4" required>
+    <div *ngIf="teamForm.submitted && foundation.invalid" class="invalid-
+    feedback">
+    <div *ngIf="foundation.errors.required" class="red">Foundation is required</div> <div *ngIf="foundation.errors.minlength">Foundation must have at least
+    4 characters </div> </div>
+    </div>
+    <div class="form-group">
+    <button class="btn_4">LogIn</button>
+    </div> </form>
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
